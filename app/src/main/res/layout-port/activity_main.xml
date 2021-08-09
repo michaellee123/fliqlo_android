@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".MainActivity">
+
+    <dog.abcd.fliqlo.CountDownDigit
+        android:id="@+id/hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/center"
+        android:clipChildren="false"
+        android:clipToPadding="false" />
+
+    <View
+        android:id="@+id/center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true" />
+
+    <dog.abcd.fliqlo.CountDownDigit
+        android:id="@+id/minute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/center"
+        android:clipChildren="false"
+        android:clipToPadding="false" />
+
+    <TextClock
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/minute"
+        android:layout_alignStart="@id/minute"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:format12Hour="yyyy年MM月dd日 EEEE"
+        android:format24Hour="yyyy年MM月dd日 EEEE"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_color"
+        android:textSize="14sp"
+        tools:text="20200110" />
+
+
+</RelativeLayout>
