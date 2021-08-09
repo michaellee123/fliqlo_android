@@ -11,8 +11,8 @@
         android:id="@+id/hour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toStartOf="@id/center"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/center"
         android:clipChildren="false"
         android:clipToPadding="false" />
 
@@ -26,9 +26,9 @@
         android:id="@+id/minute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@id/center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/center"
         android:clipChildren="false"
         android:clipToPadding="false" />
 
@@ -36,8 +36,8 @@
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/hour"
-        android:layout_alignStart="@id/hour"
+        android:layout_below="@id/minute"
+        android:layout_alignStart="@id/minute"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:format12Hour="yyyy年MM月dd日 EEEE"

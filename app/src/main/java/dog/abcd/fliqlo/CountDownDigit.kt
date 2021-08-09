@@ -3,7 +3,8 @@ package dog.abcd.fliqlo
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import android.view.animation.LinearInterpolator
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.FrameLayout
 import dog.abcd.fliqlo.databinding.ViewCountdownClockDigitBinding
 
@@ -12,11 +13,7 @@ class CountDownDigit : FrameLayout {
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context,
-        attrs,
-        defStyleAttr
-    )
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     private val bind: ViewCountdownClockDigitBinding
 
@@ -50,23 +47,19 @@ class CountDownDigit : FrameLayout {
         bind.backUpperText.text = newText
         bind.frontUpper.pivotY = bind.frontUpper.bottom.toFloat()
         bind.frontLower.pivotY = bind.frontUpper.top.toFloat()
-        bind.frontUpper.pivotX =
-            (bind.frontUpper.right - ((bind.frontUpper.right - bind.frontUpper.left) / 2)).toFloat()
-        bind.frontLower.pivotX =
-            (bind.frontUpper.right - ((bind.frontUpper.right - bind.frontUpper.left) / 2)).toFloat()
+        bind.frontUpper.pivotX = (bind.frontUpper.right - ((bind.frontUpper.right - bind.frontUpper.left) / 2)).toFloat()
+        bind.frontLower.pivotX = (bind.frontUpper.right - ((bind.frontUpper.right - bind.frontUpper.left) / 2)).toFloat()
 
-        bind.frontUpper.animate().setDuration(getHalfOfAnimationDuration()).rotationX(-90f)
-            .setInterpolator(LinearInterpolator())
+        bind.frontUpper.animate().setDuration(getHalfOfAnimationDuration()).rotationX(-90f).setInterpolator(AccelerateInterpolator())
             .withEndAction {
                 bind.frontUpperText.text = bind.backUpperText.text
                 bind.frontUpper.rotationX = 0f
                 bind.frontLower.rotationX = 90f
                 bind.frontLowerText.text = bind.backUpperText.text
-                bind.frontLower.animate().setDuration(getHalfOfAnimationDuration()).rotationX(0f)
-                    .setInterpolator(LinearInterpolator())
-                    .withEndAction {
-                        bind.backLowerText.text = bind.frontLowerText.text
-                    }.start()
+                bind.frontLower.animate().setDuration(getHalfOfAnimationDuration()).rotationX(0f).setInterpolator(DecelerateInterpolator())
+                        .withEndAction {
+                            bind.backLowerText.text = bind.frontLowerText.text
+                        }.start()
             }.start()
     }
 
@@ -79,7 +72,7 @@ class CountDownDigit : FrameLayout {
     }
 
 
-    fun setTypeFace(typeFace: Typeface) {
+    fun setTypeFace(typeFace: Typeface){
         bind.frontUpperText.typeface = typeFace
         bind.frontLowerText.typeface = typeFace
         bind.backUpperText.typeface = typeFace

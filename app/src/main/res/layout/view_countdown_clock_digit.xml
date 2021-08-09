@@ -16,8 +16,8 @@
 
         <FrameLayout
             android:id="@+id/backUpper"
-            android:layout_width="240dp"
-            android:layout_height="120dp"
+            android:layout_width="280dp"
+            android:layout_height="140dp"
             android:layout_marginBottom="1dp"
             android:background="@drawable/background_top">
 
@@ -38,8 +38,8 @@
 
         <FrameLayout
             android:id="@+id/backLower"
-            android:layout_width="240dp"
-            android:layout_height="120dp"
+            android:layout_width="280dp"
+            android:layout_height="140dp"
             android:layout_marginTop="1dp"
             android:background="@drawable/background_bottom">
 
@@ -67,8 +67,8 @@
 
         <FrameLayout
             android:id="@+id/frontUpper"
-            android:layout_width="240dp"
-            android:layout_height="120dp"
+            android:layout_width="280dp"
+            android:layout_height="140dp"
             android:layout_marginBottom="1dp"
             android:background="@drawable/background_top">
 
@@ -89,8 +89,8 @@
 
         <FrameLayout
             android:id="@+id/frontLower"
-            android:layout_width="240dp"
-            android:layout_height="120dp"
+            android:layout_width="280dp"
+            android:layout_height="140dp"
             android:layout_marginTop="1dp"
             android:background="@drawable/background_bottom">
 

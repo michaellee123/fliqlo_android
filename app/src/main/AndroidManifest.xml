@@ -16,7 +16,7 @@
             android:value="landscape" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="sensorLandscape">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
